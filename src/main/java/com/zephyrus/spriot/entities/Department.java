@@ -1,4 +1,4 @@
-package com.zephyrus.spriot.entity;
+package com.zephyrus.spriot.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

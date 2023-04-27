@@ -1,4 +1,4 @@
-package com.zephyrus.spriot.service;
+package com.zephyrus.spriot.services;
 
 public interface DepartmentService {
 }

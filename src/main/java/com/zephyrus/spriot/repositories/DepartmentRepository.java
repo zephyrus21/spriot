@@ -1,6 +1,6 @@
-package com.zephyrus.spriot.repository;
+package com.zephyrus.spriot.repositories;
 
-import com.zephyrus.spriot.entity.Department;
+import com.zephyrus.spriot.entities.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
