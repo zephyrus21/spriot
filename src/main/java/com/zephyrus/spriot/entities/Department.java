@@ -12,7 +12,7 @@ public class Department {
   private Long departmentId;
   private String departmentName;
   private String departmentCode;
-  private String getDepartmentAddress;
+  private String departmentAddress;
 
   public Department() {
   }
@@ -21,7 +21,7 @@ public class Department {
     this.departmentId = departmentId;
     this.departmentName = departmentName;
     this.departmentCode = departmentCode;
-    this.getDepartmentAddress = getDepartmentAddress;
+    this.departmentAddress = getDepartmentAddress;
   }
 
   @Override
@@ -30,7 +30,7 @@ public class Department {
         "departmentId=" + departmentId +
         ", departmentName='" + departmentName + '\'' +
         ", departmentCode='" + departmentCode + '\'' +
-        ", getDepartmentAddress='" + getDepartmentAddress + '\'' +
+        ", getDepartmentAddress='" + departmentAddress + '\'' +
         '}';
   }
 
@@ -58,11 +58,11 @@ public class Department {
     this.departmentCode = departmentCode;
   }
 
-  public String getGetDepartmentAddress() {
-    return getDepartmentAddress;
+  public String getDepartmentAddress() {
+    return departmentAddress;
   }
 
-  public void setGetDepartmentAddress(String getDepartmentAddress) {
-    this.getDepartmentAddress = getDepartmentAddress;
+  public void setDepartmentAddress(String getDepartmentAddress) {
+    this.departmentAddress = getDepartmentAddress;
   }
 }
