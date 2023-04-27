@@ -1,0 +1,13 @@
+package com.zephyrus.spriot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpriotApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpriotApplication.class, args);
+	}
+
+}
