@@ -1,7 +1,11 @@
 package com.zephyrus.spriot.controllers;
 
 import com.zephyrus.spriot.entities.Department;
+import com.zephyrus.spriot.errors.DepartmentNotFoundException;
 import com.zephyrus.spriot.services.DepartmentService;
+import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +13,8 @@ import java.util.List;
 
 @RestController
 public class DepartmentController {
+  private final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
+
   @Autowired
   private DepartmentService departmentService;
 
@@ -23,12 +29,13 @@ public class DepartmentController {
   }
 
   @GetMapping(path = "/departments/{id}")
-  public Department fetchDepartmentById(@PathVariable("id") Long departmentId) {
+  public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
     return departmentService.fetchDepartmentById(departmentId);
   }
 
   @PostMapping(path = "/departments")
-  public Department saveDepartment(@RequestBody Department department) {
+  public Department saveDepartment(@Valid @RequestBody Department department) {
+    LOGGER.info("Inside saveDepartment of DepartmentController");
     return departmentService.saveDepartment(department);
   }
 
@@ -36,5 +43,10 @@ public class DepartmentController {
   public String deleteDepartmentById(@PathVariable("id") Long departmentId) {
     departmentService.deleteDepartmentById(departmentId);
     return "Department deleted successfully";
+  }
+
+  @GetMapping(path = "/departments/name/{name}")
+  public Department fetchDepartmentByName(@PathVariable("name") String departmentName) {
+    return departmentService.fetchDepartmentByName(departmentName);
   }
 }
